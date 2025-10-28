@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+body{
+  @apply bg-gray-200 dark:bg-neutral-800
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+.fade-mask {
+  background: linear-gradient(
+    to right,
+    var(--fade-bg,#e5e5e5) 0%,
+    transparent 10%,
+    transparent 90%,
+    var(--fade-bg, #e5e5e5) 100%
+  );
+}
+
